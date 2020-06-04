@@ -30,7 +30,7 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <!-- <h5 class="card-title text-center">Sign In</h5> -->
-            <h5 class="card-title text-center">SIPENRU v1.0 <br> SISTEM PENGGUNAAN RUANGAN</h5>
+            <h5 class="card-title text-center">SIPENRU v1.1<br>SISTEM PENGGUNAAN RUANG RAPAT</h5>
             <form class="form-signin" method="post" action="login.php">
               <div class="form-label-group">
                 <input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus>
