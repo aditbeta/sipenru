@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Sistem Penggunaan Ruangan</div>
+        <div class="sidebar-brand-text mx-3">Sistem Penggunaan Ruang Rapat</div>
       </a>
 
       <!-- Divider -->
@@ -14,9 +14,9 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">
+        <a class="nav-link" href="menu_utama.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
+          <span>Menu Utama</span></a>
       </li>
 
       <!-- Divider -->

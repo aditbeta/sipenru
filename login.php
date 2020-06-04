@@ -19,7 +19,7 @@
 		$_SESSION['user_no_handphone'] = $row["no_handphone"];
 		$_SESSION['user_bagian'] = $row["bagian"];
 		$_SESSION['user_role'] = $row["role"];
-        header( "Location: daftar_ruangan.php" );
+        header( "Location: menu_utama.php" );
     } else {
         header( "Location: index.php" );
     }

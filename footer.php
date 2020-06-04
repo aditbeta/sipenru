@@ -2,7 +2,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Sistem Penggunaan Ruangan - UNINDRA PGRI KAMPUS GEDONG 2019</span>
+            <span>Copyright &copy; Sistem Penggunaan Ruang Rapat - PT. ANGKA WIJAYA SENTOSA 2020</span>
           </div>
         </div>
       </footer>
