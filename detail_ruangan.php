@@ -91,13 +91,14 @@ include 'head.php';
                 </table>
                 <div class="row admin-item">
                   <div class="col-md-6">
-                    <a href='#' class='btn btn-light btn-icon-split' id="tambah-ketersediaan"><span class='icon text-gray-600'><i class='fas fa-plus'></i></span><span class='text'>Tambah Ketersediaan Ruangan</span></a>
+                    <a href='#' class='btn btn-light btn-icon-split print-hide' id="tambah-ketersediaan"><span class='icon text-gray-600'><i class='fas fa-plus'></i></span><span class='text'>Tambah Ketersediaan Ruangan</span></a>
                   </div>
                   <div class="col-md-6" align="right">
                     <a href='#' class='btn btn-primary' id="simpan" onclick="simpanKetersediaan()">Simpan</a>
                   </div>
                 </div>
               </div>
+            <?php include 'cetak_halaman.php';?>
           </div>
 
         </div>

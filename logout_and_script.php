@@ -42,4 +42,10 @@
       $(".trJam").hide();
       indexBaris = ($("#dataTable").find("tr").length);
     });
+
+    $(".btn-print").click(function(){
+      $(".trJam").show()
+      window.print()
+      $(".trJam").hide()
+    });
   </script>

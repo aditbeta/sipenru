@@ -30,7 +30,7 @@
           <h1 class="h3 mb-4 text-gray-800">Daftar Ruangan Kampus Gedong</h1>
 
           <div class="card-body" align="right">
-              <a href='tambah_ruangan.php' class='btn btn-success btn-icon-split'><span class='icon text-white-50'><i class='fas fa-plus'></i></span><span class='text'>Tambah Ruangan</span></a>
+              <a href='tambah_ruangan.php' class='btn btn-success btn-icon-split print-hide'><span class='icon text-white-50'><i class='fas fa-plus'></i></span><span class='text'>Tambah Ruangan</span></a>
           </div>
 
           <!-- Table data ruangan -->
