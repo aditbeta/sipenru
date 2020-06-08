@@ -97,6 +97,8 @@
             </div>
           </div>
 
+          <?php include 'cetak_halaman.php';?>
+
         </div>
         <!-- /.container-fluid -->
 
