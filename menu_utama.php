@@ -21,7 +21,7 @@
 
           <!-- Page Heading -->
 
-          <!-- Table data ruangan -->
+          <!-- Table untuk memperlihatkan data ruangan -->
           <div class="card-body" style="font-size: 40px;">
 
             <div class="row admin-item" style="margin-top:8%; margin-bottom:9%;">

@@ -47,12 +47,16 @@
                 <label class="custom-control-label" for="customCheck1">Ingat password</label>
               </div>
               <button class='btn btn-primary btn-user btn-block text-uppercase' id="simpan" onclick="login()">Masuk</button>
+              <!-- <a class="btn btn-primary btn-user btn-block text-uppercase" href="#" data-toggle="modal" data-target="#invalidLoginModal">
+                Popup Salah
+              </a> -->
             </form>
           </div>
         </div>
       </div>
     </div>
   </div>
+
 
   <script>
     function login() {

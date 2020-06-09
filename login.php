@@ -1,5 +1,6 @@
 <?php
 	include 'db_connection.php';
+	// include 'invalid_login.php';
 	$conn = connectDB();
 
 	$username = $_POST['username'];
@@ -21,7 +22,11 @@
 		$_SESSION['user_role'] = $row["role"];
         header( "Location: menu_utama.php" );
     } else {
-        header( "Location: index.php" );
+        // header( "Location: index.php" );
+        echo "<script>
+		alert('Username atau Password tidak valid');
+		window.location.href='index.php';
+		</script>";
     }
 
     $conn->close();
