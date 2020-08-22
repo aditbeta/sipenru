@@ -13,4 +13,8 @@
 		$conn -> close();
 	}
 
+	function getData($conn, $sql) {
+		$result = $conn->query($sql);
+		return $result->fetch_assoc();
+	}
 ?>

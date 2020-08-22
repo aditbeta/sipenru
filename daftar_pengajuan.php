@@ -68,19 +68,19 @@
                         if ($resultKetersediaan->num_rows > 0) {
                           $pengajuan = "<tr><td>";
                           while($rowKetersediaan = $resultKetersediaan->fetch_assoc()) {
-                            $sql = "SELECT * FROM Ruangan WHERE kode=".$rowKetersediaan["kode_ruangan"];
+                            $sql = "SELECT * FROM Ruangan WHERE kode='".$rowKetersediaan["kode_ruangan"]."'";
                             $resultRuangan = $conn->query($sql);
                             $rowRuangan = $resultRuangan->fetch_assoc();
 
                             switch ($row["status"]) {
                               case 1:
-                                $status = "<button class='btn btn-success' style='width:100%;' disabled>Disetujui</button>";
+                                $status = "<a href='bukti_pengajuan.php?id_penggunaan=".$row["id"]."' class='btn btn-success' style='width:100%;'>Disetujui</a>";
                                 break;
                               case 2:
-                                $status = "<button class='btn btn-danger' style='width:100%;' disabled>Ditolak</button>";
+                                $status = "<a href='bukti_pengajuan.php?id_penggunaan=".$row["id"]."' class='btn btn-danger' style='width:100%;'>Ditolak</a>";
                                 break;
                               default:
-                                $status = "<button class='btn btn-warning' style='width:100%;' disabled>Diajukan</button>";
+                                $status = "<a href='bukti_pengajuan.php?id_penggunaan=".$row["id"]."' class='btn btn-warning' style='width:100%;'>Diajukan</a>";
                                 break;
                             }
 
