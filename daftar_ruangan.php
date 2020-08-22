@@ -64,20 +64,21 @@
                         $lihatJam = "<a href='#' class='btn btn-secondary btn-icon-split jamButton' id='".$row["id"]."'><span class='icon text-white-50'><i class='fas fa-clock'></i></span><span class='text'>Lihat Jam</span></a> ";
                         $detailRuangan = "<a href='detail_ruangan.php?id_ruangan=".$row["id"]."' class='btn btn-info btn-icon-split'><span class='icon text-white-50'><i class='fas fa-info-circle'></i></span><span class='text'>Detail</span></a>";
                         echo "<tr><td>".$row["id"]."</td><td>".$row["kode"]."</td><td>".$row["nama"]."</td><td>".$row["deskripsi"]."</td><td>".$lihatJam." ".$detailRuangan."</td></tr>";
-                        $sql = "SELECT * FROM KetersediaanRuangan WHERE kode_ruangan=".$row["kode"]." ORDER BY jam_mulai asc";
+                        $sql = "SELECT * FROM KetersediaanRuangan WHERE kode_ruangan='".$row["kode"]."' ORDER BY jam_mulai asc";
                         $result1 = $conn->query($sql);
                         if (!$result1) {
                             trigger_error('Invalid query: ' . $conn->error);
                         }
-                        // echo "<script type='text/javascript'>alert('$result1');</script>";
                         if ($result1->num_rows > 0) {
                           $pilihanJam = "<tr class='trJam jam".$row["id"]."'><td colspan='5'>";
                           while($row1 = $result1->fetch_assoc()) {
+                            $tanggal = date('j M Y', strtotime($row1["tanggal"]));
+                            $jam = $tanggal." | ".substr($row1["jam_mulai"], 0, 5)." - ".substr($row1["jam_selesai"], 0, 5);
                             if ($row1["status"] == 1) {
-                              $pilihanJam .= "<button class='btn btn-google' disabled>".$row1["jam_mulai"]." - ".$row1["jam_selesai"]."</button> ";
+                              $pilihanJam .= "<button class='btn btn-google' disabled>".$jam."</button> ";
                             } else {
-                              $parameter = "\"".$row["nama"]."\",\"".$row["kode"]."\",\"".$row1["tanggal"]."\",\"".$row1["jam_mulai"]."\"";
-                              $pilihanJam .= "<button class='btn btn-success' onclick='ajukanRuangan(".$parameter.")'>".$row1["jam_mulai"]." - ".$row1["jam_selesai"]."</button> ";
+                              $parameter = "\"".$row["nama"]."\",\"".$row["kode"]."\",\"".$row1["tanggal"]."\",\"".$row1["jam_mulai"]."\",\"".$row1["id"]."\"";
+                              $pilihanJam .= "<button class='btn btn-success' onclick='ajukanRuangan(".$parameter.")'>".$jam."</button> ";
                             }
                           }
                           $pilihanJam .= "</td></tr>";
@@ -121,8 +122,8 @@
       $(".jam"+this.id).toggle()
     });
 
-    function ajukanRuangan(nama_ruangan, kode_ruangan, tanggal, jam_mulai) {
-      var parameter = "nama=" + nama_ruangan + "&kode=" + kode_ruangan + "&tanggal=" + tanggal + "&mulai=" + jam_mulai
+    function ajukanRuangan(nama_ruangan, kode_ruangan, tanggal, jam_mulai, id_ketersediaan) {
+      var parameter = "nama=" + nama_ruangan + "&kode=" + kode_ruangan + "&tanggal=" + tanggal + "&mulai=" + jam_mulai + "&id_ketersediaan=" + id_ketersediaan
       window.location.href = "ajukan_penggunaan.php?" + parameter;
     }
   </script>

@@ -83,15 +83,14 @@
       var kode_ruangan = url.searchParams.get("kode");
       var tanggal = url.searchParams.get("tanggal");
       var jam_mulai = url.searchParams.get("mulai");
+      var id_ketersediaan = url.searchParams.get("id_ketersediaan");
       if (jam_mulai != null) {
         ruanganChange(kode_ruangan);
-        tanggalChange(tanggal);
-        $("#nama_ruangan").val(nama_ruangan);
+        tanggalChange(tanggal, id_ketersediaan);
+        $("#nama_ruangan").val(kode_ruangan);
         $("#nama_ruangan").prop('disabled', true);
         $("#tanggal").val(tanggal);
         $("#tanggal").prop('disabled', true);
-        // $("#jam").val(jam_mulai);
-        $("#jam").prop('disabled', true);
         $("#simpan").show();
       }
     });
@@ -102,7 +101,7 @@
         "<input class='form-control' type='date' name='tanggal' id='tanggal' onchange='tanggalChange(this.value)'>"
     }
 
-    function tanggalChange(tanggal) {
+    function tanggalChange(tanggal, id_ketersediaan) {
       var e = document.getElementById("nama_ruangan");
       var kode_ruangan = e.options[e.selectedIndex].value;
       if (window.XMLHttpRequest) {
@@ -116,7 +115,7 @@
           document.getElementById("simpan").disabled = false;
         }
       };
-      xmlhttp.open("GET","get_jam.php?kode_ruangan=" + kode_ruangan + "&tanggal=" + tanggal, true);
+      xmlhttp.open("GET","get_jam.php?kode_ruangan=" + kode_ruangan + "&tanggal=" + tanggal + "&id_ketersediaan=" + id_ketersediaan, true);
       xmlhttp.send();
 
       document.getElementById("divKeterangan").innerHTML =

@@ -68,9 +68,7 @@
                         if ($resultKetersediaan->num_rows > 0) {
                           $pengajuan = "<tr><td>";
                           while($rowKetersediaan = $resultKetersediaan->fetch_assoc()) {
-                            $sql = "SELECT * FROM Ruangan WHERE kode='".$rowKetersediaan["kode_ruangan"]."'";
-                            $resultRuangan = $conn->query($sql);
-                            $rowRuangan = $resultRuangan->fetch_assoc();
+                            $rowRuangan = getData($conn, "SELECT * FROM Ruangan WHERE kode='".$rowKetersediaan["kode_ruangan"]."'");
 
                             switch ($row["status"]) {
                               case 1:

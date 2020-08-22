@@ -64,7 +64,7 @@ include 'head.php';
                   </thead>
                   <tbody>
                     <?php
-                    $sql = "SELECT * FROM KetersediaanRuangan WHERE kode_ruangan = ".$row['kode']." ORDER BY jam_mulai asc";
+                    $sql = "SELECT * FROM KetersediaanRuangan WHERE kode_ruangan = '".$row['kode']."' ORDER BY jam_mulai asc";
                     $result1 = $conn->query($sql);
                     if ($result1->num_rows > 0) {
                       // output data of each row

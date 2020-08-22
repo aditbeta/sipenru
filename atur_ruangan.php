@@ -73,7 +73,7 @@
                         $lihatJam = "<a href='#' class='btn btn-secondary btn-icon-split jamButton' id='".$row["id"]."'><span class='icon text-white-50'><i class='fas fa-clock'></i></span><span class='text'>Lihat Jam</span></a>";
                         $detailRuangan = "<a href='detail_ruangan.php?id_ruangan=".$row["id"]."' class='btn btn-info btn-icon-split'><span class='icon text-white-50'><i class='fas fa-info-circle'></i></span><span class='text'>Detail</span></a>";
                         echo "<tr><td>".$row["id"]."</td><td>".$row["kode"]."</td><td>".$row["nama"]."</td><td>".$row["deskripsi"]."</td><td>".$lihatJam." ".$detailRuangan."</td></tr>";
-                        $sql = "SELECT * FROM KetersediaanRuangan WHERE kode_ruangan=".$row["kode"]." ORDER BY jam_mulai asc";
+                        $sql = "SELECT * FROM KetersediaanRuangan WHERE kode_ruangan='".$row["kode"]."' ORDER BY jam_mulai asc";
                         $result1 = $conn->query($sql);
                         if ($result1->num_rows > 0) {
                           $pilihanJam = "<tr class='trJam jam".$row["id"]."'><td colspan='5'>";
