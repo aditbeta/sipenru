@@ -135,7 +135,7 @@
          data:{ action:'penggunaan', id_ketersediaan: id_ketersediaan, id_user: id_user, keterangan: keterangan },
          success:function(data) {
            alert("Berhasil mengajukan penggunaan ruangan. Nomor pengajuan: " + data);
-           window.location.href = "daftar_pengajuan.php";
+           window.location.href = "bukti_pengajuan.php?id_penggunaan=" + data;
          }
       });
     }

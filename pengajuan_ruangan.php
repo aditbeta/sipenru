@@ -124,7 +124,6 @@
 
   <script>
     function prosesPengajuan(data, proses){
-      // alert(data);
       var id_penggunaan = data.split(",")[0];
       var id_ketersediaan = data.split(",")[1];
       $.ajax({
@@ -137,7 +136,7 @@
            } else {
             alert("Berhasil menolak pengajuan dengan nomor: " + data);
            }
-           location.reload()
+           window.location.href = "bukti_pengajuan.php?id_penggunaan=" + data;
          }
       });
     }
