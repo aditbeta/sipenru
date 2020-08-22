@@ -13,10 +13,10 @@
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Anda akan keluar dari SIPENRU, pilih Logout untuk melanjutkan.</div>
+        <div class="modal-body">Anda yakin akan keluar? Klik Yes untuk melanjutkan.</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-          <a class="btn btn-primary" href="logout.php">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
+          <a class="btn btn-primary" href="logout.php">Yes</a>
         </div>
       </div>
     </div>

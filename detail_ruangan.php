@@ -30,6 +30,7 @@ include 'head.php';
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+          <?php include 'header_laporan.php';?>
 
           <!-- Page Heading -->
           <div class="row">
@@ -100,6 +101,7 @@ include 'head.php';
               </div>
             <?php include 'cetak_halaman.php';?>
           </div>
+          <?php include 'footer_laporan.php';?>
 
         </div>
         <!-- /.container-fluid -->

@@ -25,6 +25,7 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+          <?php include 'header_laporan.php';?>
 
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800">Daftar Pengajuan Belum Diproses</h1>
@@ -100,6 +101,7 @@
           </div>
 
           <?php include 'cetak_halaman.php';?>
+          <?php include 'footer_laporan.php';?>
 
         </div>
         <!-- /.container-fluid -->

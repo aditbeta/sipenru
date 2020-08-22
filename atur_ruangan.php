@@ -25,9 +25,13 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+          <?php include 'header_laporan.php';?>
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Daftar Ruangan Kampus Gedong</h1>
+          <div class="card-body">
+              <h1 class="h3 mb-4 text-gray-800">Daftar Ruang Rapat</h1>
+              <h1 class="h3 mb-4 text-gray-800">PT Angka Wijaya Sentosa</h1>
+          </div>
 
           <div class="card-body" align="right">
               <a href='tambah_ruangan.php' class='btn btn-success btn-icon-split print-hide'><span class='icon text-white-50'><i class='fas fa-plus'></i></span><span class='text'>Tambah Ruangan</span></a>
@@ -98,6 +102,7 @@
           </div>
 
           <?php include 'cetak_halaman.php';?>
+          <?php include 'footer_laporan.php';?>
 
         </div>
         <!-- /.container-fluid -->

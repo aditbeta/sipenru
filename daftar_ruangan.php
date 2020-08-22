@@ -20,9 +20,13 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+          <?php include 'header_laporan.php';?>
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Daftar Ruangan Kampus Gedong</h1>
+          <div class="card-body">
+              <h1 class="h3 mb-4 text-gray-800">Daftar Ruang Rapat</h1>
+              <h1 class="h3 mb-4 text-gray-800">PT Angka Wijaya Sentosa</h1>
+          </div>
 
           <!-- Table data ruangan -->
           <div class="card-body">
@@ -94,6 +98,7 @@
           </div>
 
           <?php include 'cetak_halaman.php';?>
+          <?php include 'footer_laporan.php';?>
 
         </div>
         <!-- /.container-fluid -->
