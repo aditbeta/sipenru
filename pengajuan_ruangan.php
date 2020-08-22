@@ -79,15 +79,18 @@
                       $resultUser = $conn->query($sql);
                       $rowUser = $resultUser->fetch_assoc();
 
-                      $waktu = $rowKetersediaan["tanggal"]." |<br />".$rowKetersediaan["jam_mulai"]."-".$rowKetersediaan["jam_selesai"];
+                      $tanggal = formatTanggal($rowKetersediaan["tanggal"]);
+                      $waktu = $tanggal." | ".formatJam($rowKetersediaan["jam_mulai"])." - ".formatJam($rowKetersediaan["jam_selesai"]);
                       $status = $rowKetersediaan["status"] == 2 ? "OK" : "X";
 
                       $idData = $rowPenggunaan["id"] . "," . $rowPenggunaan["id_ketersediaan"];
 
+                      $tanggal_pengajuan = date('j M Y', strtotime($rowPenggunaan["tanggal_pengajuan"]))." ".date('H:i', strtotime($rowPenggunaan["tanggal_pengajuan"]));
+
                       $terimaPengajuan = "<a href='#' class='btn btn-success btn-icon-split' onclick='prosesPengajuan(\"".$idData."\", 1)'><span class='icon text-white-50'><i class='fas fa-check'></i></span><span class='text'>Terima</span></a>";
                       $tolakPengajuan = "<a href='#' class='btn btn-danger btn-icon-split' onclick='prosesPengajuan(\"".$idData."\", 2)'><span class='icon text-white-50'><i class='fas fa-times'></i></span><span class='text'>Tolak</span></a>";
 
-                      echo "<tr><td>".$rowKetersediaan["id"]."</td><td>".$ruangan."</td><td>".$waktu."</td><td>".$rowUser["nama"]."</td><td>".$rowPenggunaan["tanggal_pengajuan"]."</td><td>".$rowPenggunaan["keterangan"]."</td><td>".$tolakPengajuan." ".$terimaPengajuan."</td></tr>";
+                      echo "<tr><td>".$rowKetersediaan["id"]."</td><td>".$ruangan."</td><td>".$waktu."</td><td>".$rowUser["nama"]."</td><td>".$tanggal_pengajuan."</td><td>".$rowPenggunaan["keterangan"]."</td><td>".$tolakPengajuan." ".$terimaPengajuan."</td></tr>";
                     }
                   } else {
                     echo "<tr><td colspan='7' align='center'>- Tidak ada pengajuan baru -</td></tr>";

@@ -40,6 +40,7 @@
                     $pilihanRuangan = "";
 
                     if ($result->num_rows > 0) {
+                      $pilihanRuangan .= "<option value='' selected disabled>-- Pilih Ruangan --</option>";
                       while($row = $result->fetch_assoc()) {
                         $pilihanRuangan .= "<option value=".$row["kode"].">".$row["nama"]."</option>";
                       }
@@ -101,7 +102,7 @@
         "<input class='form-control' type='date' name='tanggal' id='tanggal' onchange='tanggalChange(this.value)'>"
     }
 
-    function tanggalChange(tanggal, id_ketersediaan) {
+    function tanggalChange(tanggal, id_ketersediaan = 0) {
       var e = document.getElementById("nama_ruangan");
       var kode_ruangan = e.options[e.selectedIndex].value;
       if (window.XMLHttpRequest) {

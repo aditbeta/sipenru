@@ -72,7 +72,7 @@
 
                             switch ($row["status"]) {
                               case 1:
-                                $status = "<a href='bukti_pengajuan.php?id_penggunaan=".$row["id"]."' class='btn btn-success' style='width:100%;'>Disetujui</a>";
+                                $status = "<a href='bukti_pengajuan.php?id_penggunaan=".$row["id"]."' class='btn btn-success' style='width:100%;'>Diterima</a>";
                                 break;
                               case 2:
                                 $status = "<a href='bukti_pengajuan.php?id_penggunaan=".$row["id"]."' class='btn btn-danger' style='width:100%;'>Ditolak</a>";
@@ -84,10 +84,10 @@
 
                             $pengajuan .= $row["id"]."</td><td>"
                             .$rowRuangan["kode"]."</td><td>"
-                            .$rowKetersediaan["tanggal"]."</td><td>"
-                            .$rowKetersediaan["jam_mulai"]." - ".$rowKetersediaan["jam_selesai"]."</td><td>"
+                            .formatTanggal($rowKetersediaan["tanggal"])."</td><td>"
+                            .formatJam($rowKetersediaan["jam_mulai"])." - ".formatJam($rowKetersediaan["jam_selesai"])."</td><td>"
                             .$row["keterangan"]."</td><td>"
-                            .$row["tanggal_pengajuan"]."</td><td>"
+                            .formatTanggal($row["tanggal_pengajuan"])."</td><td>"
                             .$status;
                           }
                           $pengajuan .= "</td></tr>";

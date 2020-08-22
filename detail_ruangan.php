@@ -81,7 +81,7 @@ include 'head.php';
                             $status = "<button class='btn btn-success' disabled>Tersedia</button>";
                             break;
                         }
-                        $pilihanJam .= "<tr><td>".$row1["tanggal"]."</td><td>".$row1["jam_mulai"]."</td><td>".$row1["jam_selesai"]."</td><td>".$status."</td></tr>";
+                        $pilihanJam .= "<tr><td>".formatTanggal($row1["tanggal"])."</td><td>".formatJam($row1["jam_mulai"])."</td><td>".formatJam($row1["jam_selesai"])."</td><td>".$status."</td></tr>";
                       }
                       echo $pilihanJam;
                     } else {

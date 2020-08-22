@@ -50,7 +50,7 @@
 
                           switch ($row["status"]) {
                             case 1:
-                              $status = "<button class='btn btn-success' disabled>Disetujui</button>";
+                              $status = "<button class='btn btn-success' disabled>Diterima</button>";
                               break;
                             case 2:
                               $status = "<button class='btn btn-danger' disabled>Ditolak</button>";

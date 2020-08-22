@@ -14,7 +14,7 @@
         $pilihanJam = "";
 
         echo "<label for='jam'>Jam</label>";
-        if ($id_ketersediaan != null) {
+        if ($id_ketersediaan != null && $id_ketersediaan > 0) {
             echo "<select class='form-control' id='jam' disabled>";
 
             $ketersediaan = getData($conn, "SELECT * FROM KetersediaanRuangan WHERE id='".$id_ketersediaan."'");
@@ -27,7 +27,7 @@
 
             if ($result->num_rows > 0) {
               while($row = $result->fetch_assoc()) {
-                $pilihanJam .= "<option value=".$row["id"].">".$row["jam_mulai"]." - ".$row["jam_selesai"]."</option>";
+                $pilihanJam .= "<option value=".$row["id"].">".formatJam($row["jam_mulai"])." - ".formatJam($row["jam_selesai"])."</option>";
               }
             } else {
               $pilihanJam = "<option disabled>- Tidak ada pilihan jam tersedia -</option>";

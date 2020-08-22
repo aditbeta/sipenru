@@ -72,8 +72,8 @@
                         if ($result1->num_rows > 0) {
                           $pilihanJam = "<tr class='trJam jam".$row["id"]."'><td colspan='5'>";
                           while($row1 = $result1->fetch_assoc()) {
-                            $tanggal = date('j M Y', strtotime($row1["tanggal"]));
-                            $jam = $tanggal." | ".substr($row1["jam_mulai"], 0, 5)." - ".substr($row1["jam_selesai"], 0, 5);
+                            $tanggal = formatTanggal($row1["tanggal"]);
+                            $jam = $tanggal." | ".formatJam($row1["jam_mulai"])." - ".formatJam($row1["jam_selesai"]);
                             if ($row1["status"] == 1) {
                               $pilihanJam .= "<button class='btn btn-google' disabled>".$jam."</button> ";
                             } else {

@@ -17,4 +17,12 @@
 		$result = $conn->query($sql);
 		return $result->fetch_assoc();
 	}
+
+	function formatTanggal($tanggal) {
+		return date('j M Y', strtotime($tanggal));
+	}
+
+	function formatJam($jam) {
+		return substr($jam, 0, 5);
+	}
 ?>

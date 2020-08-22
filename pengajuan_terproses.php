@@ -79,14 +79,17 @@
                       $resultUser = $conn->query($sql);
                       $rowUser = $resultUser->fetch_assoc();
 
-                      $waktu = $rowKetersediaan["tanggal"]." |<br />".$rowKetersediaan["jam_mulai"]."-".$rowKetersediaan["jam_selesai"];
+                      $tanggal = formatTanggal($rowKetersediaan["tanggal"]);
+                      $waktu = $tanggal." | ".formatJam($rowKetersediaan["jam_mulai"])." - ".formatJam($rowKetersediaan["jam_selesai"]);
                       if ($rowPenggunaan["status"] == 1) {
-                        $status = "<button class='btn btn-success' style='width:100%' disabled>Diterima</button>";
+                        $status = "<a href='bukti_pengajuan.php?id_penggunaan=".$rowPenggunaan["id"]."' class='btn btn-success' style='width:100%;'>Diterima</a>";
                       } else {
-                        $status = "<button class='btn btn-danger' style='width:100%' disabled>Ditolak</button>";
+                        $status = "<a href='bukti_pengajuan.php?id_penggunaan=".$rowPenggunaan["id"]."' class='btn btn-danger' style='width:100%;'>Ditolak</a>";
                       }
 
-                      echo "<tr><td>".$rowKetersediaan["id"]."</td><td>".$ruangan."</td><td>".$waktu."</td><td>".$rowUser["nama"]."</td><td>".$rowPenggunaan["tanggal_pengajuan"]."</td><td>".$rowPenggunaan["keterangan"]."</td><td>".$status."</td></tr>";
+                      $tanggal_pengajuan = date('j M Y', strtotime($rowPenggunaan["tanggal_pengajuan"]))." ".date('H:i', strtotime($rowPenggunaan["tanggal_pengajuan"]));
+
+                      echo "<tr><td>".$rowKetersediaan["id"]."</td><td>".$ruangan."</td><td>".$waktu."</td><td>".$rowUser["nama"]."</td><td>".$tanggal_pengajuan."</td><td>".$rowPenggunaan["keterangan"]."</td><td>".$status."</td></tr>";
                     }
                   } else {
                     echo "<tr><td colspan='7' align='center'>- Tidak ada pengajuan terproses -</td></tr>";
