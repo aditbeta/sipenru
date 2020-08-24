@@ -48,4 +48,10 @@
       window.print()
       $(".trJam").hide()
     });
+
+    $("#backButton").click(function(){
+      $(".trJam").show()
+      window.print()
+      $(".trJam").hide()
+    });
   </script>

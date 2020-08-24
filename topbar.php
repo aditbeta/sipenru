@@ -17,6 +17,10 @@
               </div>
             </div>
           </form> -->
+          <button class="btn btn-primary" type="button" onclick="history.back()">
+            <i class="fas fa-angle-left fa-sm"></i>
+            <span id=backButton>Kembali</span>
+          </button>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
