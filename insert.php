@@ -90,7 +90,7 @@
         }
     }
 
-    include 'db_connection.php';
+    include_once 'db_connection.php';
     $conn = connectDB();
 
     switch ($_POST['action']) {
