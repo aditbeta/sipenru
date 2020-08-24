@@ -1,0 +1,9 @@
+.print-show {
+   display : none;
+}
+
+@media print {
+    .print-show {
+       display : block;
+    }
+}

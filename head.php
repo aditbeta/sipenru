@@ -22,6 +22,7 @@
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
   <!-- Custom styles for printing -->
-  <link href="css/print.css" rel="stylesheet">
+  <link href="css/print-hide.css" rel="stylesheet">
+  <link href="css/print-show.css" rel="stylesheet">
 
 </head>

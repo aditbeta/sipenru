@@ -20,6 +20,7 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+          <?php include 'header_laporan.php';?>
 
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800">Daftar Pengajuan</h1>
@@ -67,28 +68,26 @@
                         if ($resultKetersediaan->num_rows > 0) {
                           $pengajuan = "<tr><td>";
                           while($rowKetersediaan = $resultKetersediaan->fetch_assoc()) {
-                            $sql = "SELECT * FROM Ruangan WHERE kode=".$rowKetersediaan["kode_ruangan"];
-                            $resultRuangan = $conn->query($sql);
-                            $rowRuangan = $resultRuangan->fetch_assoc();
+                            $rowRuangan = getData($conn, "SELECT * FROM Ruangan WHERE kode='".$rowKetersediaan["kode_ruangan"]."'");
 
                             switch ($row["status"]) {
                               case 1:
-                                $status = "<button class='btn btn-success' style='width:100%;' disabled>Disetujui</button>";
+                                $status = "<a href='bukti_pengajuan.php?id_penggunaan=".$row["id"]."' class='btn btn-success' style='width:100%;'>Diterima</a>";
                                 break;
                               case 2:
-                                $status = "<button class='btn btn-danger' style='width:100%;' disabled>Ditolak</button>";
+                                $status = "<a href='bukti_pengajuan.php?id_penggunaan=".$row["id"]."' class='btn btn-danger' style='width:100%;'>Ditolak</a>";
                                 break;
                               default:
-                                $status = "<button class='btn btn-warning' style='width:100%;' disabled>Diajukan</button>";
+                                $status = "<a href='bukti_pengajuan.php?id_penggunaan=".$row["id"]."' class='btn btn-warning' style='width:100%;'>Diajukan</a>";
                                 break;
                             }
 
                             $pengajuan .= $row["id"]."</td><td>"
                             .$rowRuangan["kode"]."</td><td>"
-                            .$rowKetersediaan["tanggal"]."</td><td>"
-                            .$rowKetersediaan["jam_mulai"]." - ".$rowKetersediaan["jam_selesai"]."</td><td>"
+                            .formatTanggal($rowKetersediaan["tanggal"])."</td><td>"
+                            .formatJam($rowKetersediaan["jam_mulai"])." - ".formatJam($rowKetersediaan["jam_selesai"])."</td><td>"
                             .$row["keterangan"]."</td><td>"
-                            .$row["tanggal_pengajuan"]."</td><td>"
+                            .formatTanggal($row["tanggal_pengajuan"])."</td><td>"
                             .$status;
                           }
                           $pengajuan .= "</td></tr>";
@@ -109,6 +108,7 @@
           </div>
 
           <?php include 'cetak_halaman.php';?>
+          <?php include 'footer_laporan.php';?>
 
         </div>
         <!-- /.container-fluid -->

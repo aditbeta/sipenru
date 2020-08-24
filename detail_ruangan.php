@@ -30,6 +30,7 @@ include 'head.php';
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+          <?php include 'header_laporan.php';?>
 
           <!-- Page Heading -->
           <div class="row">
@@ -63,7 +64,7 @@ include 'head.php';
                   </thead>
                   <tbody>
                     <?php
-                    $sql = "SELECT * FROM KetersediaanRuangan WHERE kode_ruangan = ".$row['kode']." ORDER BY jam_mulai asc";
+                    $sql = "SELECT * FROM KetersediaanRuangan WHERE kode_ruangan = '".$row['kode']."' ORDER BY jam_mulai asc";
                     $result1 = $conn->query($sql);
                     if ($result1->num_rows > 0) {
                       // output data of each row
@@ -80,7 +81,7 @@ include 'head.php';
                             $status = "<button class='btn btn-success' disabled>Tersedia</button>";
                             break;
                         }
-                        $pilihanJam .= "<tr><td>".$row1["tanggal"]."</td><td>".$row1["jam_mulai"]."</td><td>".$row1["jam_selesai"]."</td><td>".$status."</td></tr>";
+                        $pilihanJam .= "<tr><td>".formatTanggal($row1["tanggal"])."</td><td>".formatJam($row1["jam_mulai"])."</td><td>".formatJam($row1["jam_selesai"])."</td><td>".$status."</td></tr>";
                       }
                       echo $pilihanJam;
                     } else {
@@ -100,6 +101,7 @@ include 'head.php';
               </div>
             <?php include 'cetak_halaman.php';?>
           </div>
+          <?php include 'footer_laporan.php';?>
 
         </div>
         <!-- /.container-fluid -->
