@@ -36,7 +36,7 @@
                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tbody>
                       <?php
-                      include 'db_connection.php';
+                      include_once 'db_connection.php';
                       $conn = connectDB();
 
                       $id_penggunaan = $_GET["id_penggunaan"];

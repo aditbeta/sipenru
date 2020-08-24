@@ -58,7 +58,7 @@
                 </tfoot>
                 <tbody>
                   <?php
-                  include 'db_connection.php';
+                  include_once 'db_connection.php';
                   $conn = connectDB();
 
                   $sql = "SELECT * FROM PenggunaanRuangan WHERE status>0";

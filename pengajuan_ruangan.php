@@ -58,11 +58,14 @@
                 </tfoot>
                 <tbody>
                   <?php
-                  include 'db_connection.php';
+                  include_once 'db_connection.php';
                   $conn = connectDB();
 
                   $sql = "SELECT * FROM PenggunaanRuangan WHERE status=0";
                   $resultPenggunaan = $conn->query($sql);
+                  
+                  $countPenggunaan = getCountPengajuanBaru();
+                  echo '<p>'.$countPenggunaan.'</p>';
 
                   if ($resultPenggunaan->num_rows > 0) {
                     while($rowPenggunaan = $resultPenggunaan->fetch_assoc()) {

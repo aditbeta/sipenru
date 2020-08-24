@@ -26,7 +26,7 @@
 
           <!-- Table data ruangan -->
           <?php
-            include 'db_connection.php';
+            include_once 'db_connection.php';
             $conn = connectDB();
           ?>
           <div class="card-body">

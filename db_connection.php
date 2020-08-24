@@ -25,4 +25,13 @@
 	function formatJam($jam) {
 		return substr($jam, 0, 5);
 	}
+
+	function getCountPengajuanBaru() {
+		$conn = connectDB();
+		$sql = "SELECT * FROM PenggunaanRuangan WHERE status=0";
+		
+        $result = $conn->query($sql);
+		$count = $result->num_rows;
+		return $count;
+	}
 ?>

@@ -53,7 +53,16 @@
       <li class="nav-item admin-item">
         <a class="nav-link" href="pengajuan_ruangan.php">
           <i class="fas fa-fw fa-edit"></i>
-          <span>Pengajuan Baru</span></a>
+          <span>Pengajuan Baru
+            <?php
+              include_once 'db_connection.php';
+              $count = getCountPengajuanBaru(connectDB());
+              if ($count > 0) {
+                $notifCount = "<span class='badge badge-light'>".getCountPengajuanBaru(connectDB())."</span>";
+                echo $notifCount;
+              }
+            ?>
+          </span></a>
       </li>
 
       <!-- Nav Item - Pengajuan Ruangan Sudah Diproses -->
