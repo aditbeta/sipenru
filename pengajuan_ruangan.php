@@ -85,7 +85,7 @@
 
                       $idData = $rowPenggunaan["id"] . "," . $rowPenggunaan["id_ketersediaan"];
 
-                      $tanggal_pengajuan = date('j M Y', strtotime($rowPenggunaan["tanggal_pengajuan"]))." ".date('H:i', strtotime($rowPenggunaan["tanggal_pengajuan"]));
+                      $tanggal_pengajuan = formatTanggal($rowPenggunaan["tanggal_pengajuan"])." ".formatJam($rowPenggunaan["tanggal_pengajuan"]);
 
                       $terimaPengajuan = "<a href='#' class='btn btn-success btn-icon-split' onclick='prosesPengajuan(\"".$idData."\", 1)'><span class='icon text-white-50'><i class='fas fa-check'></i></span><span class='text'>Terima</span></a>";
                       $tolakPengajuan = "<a href='#' class='btn btn-danger btn-icon-split' onclick='prosesPengajuan(\"".$idData."\", 2)'><span class='icon text-white-50'><i class='fas fa-times'></i></span><span class='text'>Tolak</span></a>";

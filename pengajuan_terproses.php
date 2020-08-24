@@ -87,7 +87,7 @@
                         $status = "<a href='bukti_pengajuan.php?id_penggunaan=".$rowPenggunaan["id"]."' class='btn btn-danger' style='width:100%;'>Ditolak</a>";
                       }
 
-                      $tanggal_pengajuan = date('j M Y', strtotime($rowPenggunaan["tanggal_pengajuan"]))." ".date('H:i', strtotime($rowPenggunaan["tanggal_pengajuan"]));
+                      $tanggal_pengajuan = formatTanggal($rowPenggunaan["tanggal_pengajuan"])." ".formatJam($rowPenggunaan["tanggal_pengajuan"]);
 
                       echo "<tr><td>".$rowKetersediaan["id"]."</td><td>".$ruangan."</td><td>".$waktu."</td><td>".$rowUser["nama"]."</td><td>".$tanggal_pengajuan."</td><td>".$rowPenggunaan["keterangan"]."</td><td>".$status."</td></tr>";
                     }

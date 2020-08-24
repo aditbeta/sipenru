@@ -45,8 +45,8 @@
 
                       if ($result->num_rows > 0) {
                           $row = $result->fetch_assoc();
-                          $tanggal_pengajuan = date('j M Y', strtotime($row["tanggal_pengajuan"]));
-                          $jam_pengajuan = date('H:i', strtotime($row["tanggal_pengajuan"]));
+                          $tanggal_pengajuan = formatTanggal($row["tanggal_pengajuan"]);
+                          $jam_pengajuan = formatJam($row["tanggal_pengajuan"]);
 
                           switch ($row["status"]) {
                             case 1:
@@ -67,8 +67,8 @@
                           echo "<tr><td>Status</td><td>".$status."</td></tr>";
 
                           $ketersediaan = getData($conn, "SELECT * FROM KetersediaanRuangan WHERE id='".$row["id_ketersediaan"]."'");
-                          $tanggal = date('j M Y', strtotime($ketersediaan["tanggal"]));
-                          $jam = substr($ketersediaan["jam_mulai"], 0, 5)." - ".substr($ketersediaan["jam_selesai"], 0, 5);
+                          $tanggal = formatTanggal($ketersediaan["tanggal"]);
+                          $jam = formatJam($ketersediaan["jam_mulai"])." - ".formatJam($ketersediaan["jam_selesai"]);
 
                           $ruangan = getData($conn, "SELECT * FROM Ruangan WHERE kode='".$ketersediaan["kode_ruangan"]."'");
 
