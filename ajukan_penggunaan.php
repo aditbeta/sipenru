@@ -60,18 +60,13 @@
               <a href='#' class='btn btn-primary' id="simpan" onclick="simpanPengajuan()">Simpan</a>
             </form>
           </div>
-
         </div>
         <!-- /.container-fluid -->
-
       </div>
       <!-- End of Main Content -->
-
       <?php include 'footer.php';?>
-
     </div>
     <!-- End of Content Wrapper -->
-
   </div>
   <!-- End of Page Wrapper -->
 
@@ -142,5 +137,4 @@
   </script>
 
 </body>
-
 </html>
